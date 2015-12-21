@@ -33,14 +33,18 @@
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="Tao-ST-dH3"/>
                                         </connections>
                                     </webView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Iw-aK-Z8A">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Iw-aK-Z8A">
                                         <rect key="frame" x="0.0" y="290" width="600" height="290"/>
+                                        <gestureRecognizers/>
                                         <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="200" y="0.0" width="200" height="380"/>
                                         </variation>
                                         <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
                                             <rect key="frame" x="400" y="0.0" width="400" height="380"/>
                                         </variation>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="3Vo-Wa-0Aq" appends="YES" id="PbR-CH-l0i"/>
+                                        </connections>
                                     </imageView>
                                 </subviews>
                                 <variation key="heightClass=compact" axis="horizontal"/>
@@ -61,6 +65,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="3Vo-Wa-0Aq">
+                    <connections>
+                        <action selector="handleTap:" destination="BYZ-38-t0r" id="vmN-4Y-rY7"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
         </scene>
         <!--Page2 View Controller-->

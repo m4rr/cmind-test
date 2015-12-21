@@ -39,6 +39,15 @@ class Page1ViewController: UIViewController {
     }
   }
 
+  @IBAction func handleTap(sender: AnyObject) {
+    let placeholderImagesLink = "http://lorempixel.com/600/400/"
+    if let url = NSURL(string: placeholderImagesLink) {
+      if let data = NSData(contentsOfURL: url) {
+        imageView.image = UIImage(data: data)
+      }
+    }
+  }
+
 }
 
 extension Page1ViewController: UIWebViewDelegate {
