@@ -33,7 +33,7 @@
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="Tao-ST-dH3"/>
                                         </connections>
                                     </webView>
-                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Iw-aK-Z8A">
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Iw-aK-Z8A">
                                         <rect key="frame" x="0.0" y="290" width="600" height="290"/>
                                         <gestureRecognizers/>
                                         <variation key="heightClass=compact-widthClass=compact" misplaced="YES">

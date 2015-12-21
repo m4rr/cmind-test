@@ -40,10 +40,15 @@ class Page1ViewController: UIViewController {
   }
 
   @IBAction func handleTap(sender: AnyObject) {
-    let placeholderImagesLink = "http://lorempixel.com/600/400/"
-    if let url = NSURL(string: placeholderImagesLink) {
-      if let data = NSData(contentsOfURL: url) {
-        imageView.image = UIImage(data: data)
+    guard let placeholderImagesUrl = NSURL(string: "http://lorempixel.com/600/400/") else {
+      return
+    }
+
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+      if let data = NSData(contentsOfURL: placeholderImagesUrl) {
+        dispatch_async(dispatch_get_main_queue()) {
+          self.imageView.image = UIImage(data: data)
+        }
       }
     }
   }
