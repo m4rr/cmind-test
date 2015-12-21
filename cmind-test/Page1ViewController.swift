@@ -49,5 +49,5 @@ extension Page1ViewController: UIWebViewDelegate {
     }
     return true
   }
-  
+
 }
