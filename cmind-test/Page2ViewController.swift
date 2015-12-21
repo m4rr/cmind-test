@@ -35,3 +35,31 @@ class Page2ViewController: UIViewController {
   */
 
 }
+
+extension Page2ViewController: UITableViewDataSource {
+
+  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return 100
+  }
+
+  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    let cell: UITableViewCell! = tableView.dequeueReusableCellWithIdentifier(basicCellId)
+
+    cell.textLabel?.text = "\(indexPath.row)"
+
+    return cell
+  }
+
+}
+
+extension Page2ViewController: UITableViewDelegate {
+
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    tableView.deselectRowAtIndexPath(indexPath, animated: true)
+
+    if indexPath.row == 0 {
+      dismissViewControllerAnimated(true, completion: nil)
+    }
+  }
+
+}

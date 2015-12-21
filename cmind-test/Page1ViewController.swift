@@ -44,7 +44,7 @@ class Page1ViewController: UIViewController {
 extension Page1ViewController: UIWebViewDelegate {
 
   func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
-    if navigationType == .LinkClicked && request.URL?.host == "yahoo.com" {
+    if navigationType == .LinkClicked && request.URL?.host?.hasSuffix("yahoo.com") == true {
       performSegueWithIdentifier("show-page-2", sender: nil)
     }
     return true
