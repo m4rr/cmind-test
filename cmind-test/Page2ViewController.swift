@@ -8,9 +8,9 @@
 
 import UIKit
 
-let basicCellId = "basicCell"
+private let basicCellId = "basicCell"
 
-class Page2ViewController: UITableViewController {
+class Page2ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
