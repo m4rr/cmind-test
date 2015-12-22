@@ -47,23 +47,23 @@ class GroupingFormatter {
   }
 
   func gg(number: Double) -> String {
-    return writeOut(grouping2(number))
+    return writeOut(consecutiveGrouping(number))
   }
 
-  func grouping2(number: Double) -> [[Int]] {
-    var sms: [[Int]] = []
-    var accum: [Int] = []
+  func consecutiveGrouping(number: Double) -> [[Int]] {
+    var sameValues: [[Int]] = []
+    var accumulator: [Int] = []
 
     splitNumber(number).forEach { (digit: Int) in
-      if accum.last != digit && !accum.isEmpty {
-        sms.append(accum)
-        accum = []
+      if accumulator.last != digit && !accumulator.isEmpty {
+        sameValues.append(accumulator)
+        accumulator = []
       }
-      accum.append(digit)
+      accumulator.append(digit)
     }
-    sms.append(accum)
+    sameValues.append(accumulator)
     
-    return sms
+    return sameValues
   }
 
   private func wordForNumber(count: Int) -> String {
@@ -73,16 +73,15 @@ class GroupingFormatter {
   private func writeOut(grouped: [[Int]]) -> String {
     let noBrakeSpace = " "
 
-    let completeSentence = grouped.reduce("") {
-      if let digit = $1.first {
-        let suffix: String = $1.count > 1 ? "s" : ""
-        return $0 + " \(wordForNumber($1.count))\(noBrakeSpace)\(digit)\(suffix),"
+    let completeSentence = grouped.reduce("") { wholeString, group in
+      if let digit = group.first {
+        let suffix: String = group.count > 1 ? "s" : ""
+        return wholeString + " \(wordForNumber(group.count))\(noBrakeSpace)\(digit)\(suffix),"
       }
-      return $0
+      return wholeString
     }
 
-    let t =  completeSentence.stringByTrimmingCharactersInSet(NSCharacterSet(charactersInString: " ,"))
-    return t
+    return completeSentence.stringByTrimmingCharactersInSet(NSCharacterSet(charactersInString: " ,"))
   }
 
   private let nf: NSNumberFormatter = {
