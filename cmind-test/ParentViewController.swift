@@ -26,6 +26,16 @@ class ParentViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    setupPageNavigation()
+  }
+
+  override func updateViewConstraints() {
+    pageViewController?.view.autoPinEdgesToSuperviewEdges()
+    
+    super.updateViewConstraints()
+  }
+
+  private func setupPageNavigation() {
     guard let pageViewController = pageViewController,
       page1VC = movableViewController(type: .Page1),
       page2VC = movableViewController(type: .Page2) else {
@@ -47,13 +57,7 @@ class ParentViewController: UIViewController {
     pageViewController.didMoveToParentViewController(self)
   }
 
-  override func updateViewConstraints() {
-    pageViewController?.view.autoPinEdgesToSuperviewEdges()
-    
-    super.updateViewConstraints()
-  }
-
-  func movableViewController(type type: PageType) -> MovableViewController? {
+  private func movableViewController(type type: PageType) -> MovableViewController? {
     return storyboard?.instantiateViewControllerWithIdentifier(type.rawValue) as? MovableViewController
   }
 
