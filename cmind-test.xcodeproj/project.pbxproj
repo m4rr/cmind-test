@@ -16,6 +16,7 @@
 		03ECBAE01C29604D00F4BF78 /* GroupingFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03ECBADF1C29604D00F4BF78 /* GroupingFormatter.swift */; };
 		03ECBAEA1C29C7C600F4BF78 /* cmind_testTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03ECBAE91C29C7C600F4BF78 /* cmind_testTests.swift */; };
 		03ECBAF11C29C7F000F4BF78 /* GroupingFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03ECBADF1C29604D00F4BF78 /* GroupingFormatter.swift */; };
+		03ECBAF31C2A06BF00F4BF78 /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03ECBAF21C2A06BF00F4BF78 /* ParentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		03ECBAE71C29C7C600F4BF78 /* cmind-testTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "cmind-testTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		03ECBAE91C29C7C600F4BF78 /* cmind_testTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cmind_testTests.swift; sourceTree = "<group>"; };
 		03ECBAEB1C29C7C600F4BF78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03ECBAF21C2A06BF00F4BF78 /* ParentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				038F40081C26FF7000534107 /* AppDelegate.swift */,
+				03ECBAF21C2A06BF00F4BF78 /* ParentViewController.swift */,
 				038F400A1C26FF7000534107 /* Page1ViewController.swift */,
 				03C5B7A11C285C9B0036497C /* Page2ViewController.swift */,
 				03ECBADF1C29604D00F4BF78 /* GroupingFormatter.swift */,
@@ -205,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				038F400B1C26FF7000534107 /* Page1ViewController.swift in Sources */,
+				03ECBAF31C2A06BF00F4BF78 /* ParentViewController.swift in Sources */,
 				03ECBAE01C29604D00F4BF78 /* GroupingFormatter.swift in Sources */,
 				03C5B7A21C285C9B0036497C /* Page2ViewController.swift in Sources */,
 				038F40091C26FF7000534107 /* AppDelegate.swift in Sources */,
@@ -405,6 +409,7 @@
 				03ECBAEF1C29C7C600F4BF78 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
