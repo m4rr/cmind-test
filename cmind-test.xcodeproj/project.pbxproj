@@ -17,6 +17,7 @@
 		03ECBAEA1C29C7C600F4BF78 /* cmind_testTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03ECBAE91C29C7C600F4BF78 /* cmind_testTests.swift */; };
 		03ECBAF11C29C7F000F4BF78 /* GroupingFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03ECBADF1C29604D00F4BF78 /* GroupingFormatter.swift */; };
 		03ECBAF31C2A06BF00F4BF78 /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03ECBAF21C2A06BF00F4BF78 /* ParentViewController.swift */; };
+		03ECBAF51C2A0CA700F4BF78 /* MovableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03ECBAF41C2A0CA700F4BF78 /* MovableViewController.swift */; };
 		A78A1B73EEB2A49C2E058945 /* Pods_cmind_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8714862E9A8AD3841CD066D /* Pods_cmind_test.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,7 @@
 		03ECBAE91C29C7C600F4BF78 /* cmind_testTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cmind_testTests.swift; sourceTree = "<group>"; };
 		03ECBAEB1C29C7C600F4BF78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03ECBAF21C2A06BF00F4BF78 /* ParentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
+		03ECBAF41C2A0CA700F4BF78 /* MovableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovableViewController.swift; sourceTree = "<group>"; };
 		143222BDB9A905FE4C405CEF /* Pods-cmind-test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cmind-test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cmind-test/Pods-cmind-test.debug.xcconfig"; sourceTree = "<group>"; };
 		D5EB306EE68D2F5BFEFABBF2 /* Pods-cmind-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cmind-test.release.xcconfig"; path = "Pods/Target Support Files/Pods-cmind-test/Pods-cmind-test.release.xcconfig"; sourceTree = "<group>"; };
 		D8714862E9A8AD3841CD066D /* Pods_cmind_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cmind_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +95,7 @@
 			children = (
 				038F40081C26FF7000534107 /* AppDelegate.swift */,
 				03ECBAF21C2A06BF00F4BF78 /* ParentViewController.swift */,
+				03ECBAF41C2A0CA700F4BF78 /* MovableViewController.swift */,
 				038F400A1C26FF7000534107 /* Page1ViewController.swift */,
 				03C5B7A11C285C9B0036497C /* Page2ViewController.swift */,
 				03ECBADF1C29604D00F4BF78 /* GroupingFormatter.swift */,
@@ -285,6 +288,7 @@
 				038F400B1C26FF7000534107 /* Page1ViewController.swift in Sources */,
 				03ECBAF31C2A06BF00F4BF78 /* ParentViewController.swift in Sources */,
 				03ECBAE01C29604D00F4BF78 /* GroupingFormatter.swift in Sources */,
+				03ECBAF51C2A0CA700F4BF78 /* MovableViewController.swift in Sources */,
 				03C5B7A21C285C9B0036497C /* Page2ViewController.swift in Sources */,
 				038F40091C26FF7000534107 /* AppDelegate.swift in Sources */,
 			);

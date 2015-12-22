@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Page1ViewController: UIViewController {
+class Page1ViewController: MovableViewController {
 
   @IBOutlet weak var webView: UIWebView!
   @IBOutlet weak var imageView: UIImageView!
@@ -59,7 +59,9 @@ extension Page1ViewController: UIWebViewDelegate {
 
   func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
     if navigationType == .LinkClicked && request.URL?.host?.hasSuffix("yahoo.com") == true {
-      performSegueWithIdentifier("show-page-2", sender: nil)
+      if moveOpposite != nil {
+        moveOpposite!()
+      }
     }
     return true
   }

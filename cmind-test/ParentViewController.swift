@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import PureLayout
 
 class ParentViewController: UIViewController {
 
-  lazy var viewControllers: [UIViewController] = [
-    Page1ViewController(),
-    Page2ViewController(),
-  ]
+  enum PageType: String {
+    case Page1 = "Page1ViewController"
+    case Page2 = "Page2ViewController"
+  }
 
   lazy var pageViewController: UIPageViewController? = {
     let pvc = self.storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as? UIPageViewController
@@ -25,41 +26,55 @@ class ParentViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    if let pageViewController = pageViewController {
-      addChildViewController(pageViewController)
-      view.addSubview(pageViewController.view)
-      pageViewController.didMoveToParentViewController(self)
+    guard let pageViewController = pageViewController,
+      page1VC = movableViewController(type: .Page1),
+      page2VC = movableViewController(type: .Page2) else {
+        return;
     }
+
+    page1VC.moveOpposite = {
+      pageViewController.setViewControllers([page2VC], direction: .Forward, animated: true, completion: nil)
+    }
+
+    page2VC.moveOpposite = {
+      pageViewController.setViewControllers([page1VC], direction: .Reverse, animated: true, completion: nil)
+    }
+
+    pageViewController.setViewControllers([page1VC], direction: .Forward, animated: false, completion: nil)
+
+    addChildViewController(pageViewController)
+    view.addSubview(pageViewController.view)
+    pageViewController.didMoveToParentViewController(self)
   }
 
   override func updateViewConstraints() {
-
+    pageViewController?.view.autoPinEdgesToSuperviewEdges()
     
     super.updateViewConstraints()
   }
 
-  /*
-  // MARK: - Navigation
-
-  // In a storyboard-based application, you will often want to do a little preparation before navigation
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-  // Get the new view controller using segue.destinationViewController.
-  // Pass the selected object to the new view controller.
+  func movableViewController(type type: PageType) -> MovableViewController? {
+    return storyboard?.instantiateViewControllerWithIdentifier(type.rawValue) as? MovableViewController
   }
-  */
 
 }
 
 extension ParentViewController: UIPageViewControllerDataSource {
 
   func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-//    viewControllers.indexOf(viewController) == 1
-    return viewController is Page2ViewController ? Page1ViewController() : nil
+    let vc: MovableViewController? = viewController is Page2ViewController ? movableViewController(type: .Page1) : nil
+    vc?.moveOpposite = {
+      pageViewController.setViewControllers([viewController], direction: .Forward, animated: true, completion: nil)
+    }
+    return vc
   }
 
   func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-    return viewController is Page1ViewController ? Page2ViewController() : nil
+    let vc: MovableViewController? = viewController is Page1ViewController ? movableViewController(type: .Page2) : nil
+    vc?.moveOpposite = {
+      pageViewController.setViewControllers([viewController], direction: .Reverse, animated: true, completion: nil)
+    }
+    return vc
   }
-
 
 }

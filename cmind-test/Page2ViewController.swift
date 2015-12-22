@@ -10,7 +10,7 @@ import UIKit
 
 private let basicCellId = "basicCell"
 
-class Page2ViewController: UIViewController {
+class Page2ViewController: MovableViewController {
 
   @IBOutlet weak var tableView: UITableView!
 
@@ -58,8 +58,8 @@ extension Page2ViewController: UITableViewDelegate {
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     tableView.deselectRowAtIndexPath(indexPath, animated: true)
 
-    if indexPath.row == 0 {
-      dismissViewControllerAnimated(true, completion: nil)
+    if indexPath.row == 0 && moveOpposite != nil {
+      moveOpposite!()
     }
   }
 

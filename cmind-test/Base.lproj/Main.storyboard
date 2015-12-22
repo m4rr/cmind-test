@@ -8,7 +8,7 @@
         <!--Page1 View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="Page1ViewController" customModule="cmind_test" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Page1ViewController" id="BYZ-38-t0r" customClass="Page1ViewController" customModule="cmind_test" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -61,7 +61,6 @@
                     <connections>
                         <outlet property="imageView" destination="8Iw-aK-Z8A" id="xfA-dy-qPp"/>
                         <outlet property="webView" destination="rIy-L2-E2e" id="wcd-h3-byT"/>
-                        <segue destination="dPa-Ad-p18" kind="show" identifier="show-page-2" id="0jg-wY-aef"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -71,11 +70,12 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="458" y="370"/>
         </scene>
         <!--Page2 View Controller-->
         <scene sceneID="nav-Zl-8cp">
             <objects>
-                <viewController id="dPa-Ad-p18" customClass="Page2ViewController" customModule="cmind_test" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Page2ViewController" id="dPa-Ad-p18" customClass="Page2ViewController" customModule="cmind_test" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ypy-OQ-pcZ"/>
                         <viewControllerLayoutGuide type="bottom" id="mkS-wp-HHk"/>
@@ -126,20 +126,20 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mRc-wE-OqQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1606" y="642"/>
+            <point key="canvasLocation" x="1246" y="370"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="ehU-hw-LLs">
             <objects>
-                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="EvC-Vk-l9y" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" pageSpacing="2" navigationOrientation="horizontal" spineLocation="none" id="EvC-Vk-l9y" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HAb-7k-5gp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="16" y="291"/>
+            <point key="canvasLocation" x="-280" y="370"/>
         </scene>
-        <!--View Controller-->
+        <!--Parent View Controller-->
         <scene sceneID="IXc-3x-iq9">
             <objects>
-                <viewController id="qGC-zA-ZE9" sceneMemberID="viewController">
+                <viewController id="qGC-zA-ZE9" customClass="ParentViewController" customModule="cmind_test" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8ta-CE-pD4"/>
                         <viewControllerLayoutGuide type="bottom" id="BMi-R9-2uY"/>
@@ -152,7 +152,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RN3-d8-fJD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-164" y="1040"/>
+            <point key="canvasLocation" x="-988" y="370"/>
         </scene>
     </scenes>
 </document>
