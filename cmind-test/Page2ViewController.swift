@@ -28,7 +28,7 @@ class Page2ViewController: UIViewController {
   }
 
   private func fillDataSource() -> [String] {
-    return (0...100).forEach {
+    return (0...100).map { _ in
       return self.groupingFormatter.grouping(
         self.groupingFormatter.random(0, 99999_99999_99999_99999)
       )

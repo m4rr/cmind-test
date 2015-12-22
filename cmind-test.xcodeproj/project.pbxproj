@@ -14,7 +14,19 @@
 		038F40131C26FF7000534107 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 038F40111C26FF7000534107 /* LaunchScreen.storyboard */; };
 		03C5B7A21C285C9B0036497C /* Page2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C5B7A11C285C9B0036497C /* Page2ViewController.swift */; };
 		03ECBAE01C29604D00F4BF78 /* GroupingFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03ECBADF1C29604D00F4BF78 /* GroupingFormatter.swift */; };
+		03ECBAEA1C29C7C600F4BF78 /* cmind_testTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03ECBAE91C29C7C600F4BF78 /* cmind_testTests.swift */; };
+		03ECBAF11C29C7F000F4BF78 /* GroupingFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03ECBADF1C29604D00F4BF78 /* GroupingFormatter.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		03ECBAEC1C29C7C600F4BF78 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 038F3FFD1C26FF7000534107 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 038F40041C26FF7000534107;
+			remoteInfo = "cmind-test";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		038F40051C26FF7000534107 /* cmind-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cmind-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -26,10 +38,20 @@
 		038F40141C26FF7000534107 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03C5B7A11C285C9B0036497C /* Page2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page2ViewController.swift; sourceTree = "<group>"; };
 		03ECBADF1C29604D00F4BF78 /* GroupingFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupingFormatter.swift; sourceTree = "<group>"; };
+		03ECBAE71C29C7C600F4BF78 /* cmind-testTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "cmind-testTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		03ECBAE91C29C7C600F4BF78 /* cmind_testTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cmind_testTests.swift; sourceTree = "<group>"; };
+		03ECBAEB1C29C7C600F4BF78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		038F40021C26FF7000534107 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03ECBAE41C29C7C600F4BF78 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -43,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				038F40071C26FF7000534107 /* cmind-test */,
+				03ECBAE81C29C7C600F4BF78 /* cmind-testTests */,
 				038F40061C26FF7000534107 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				038F40051C26FF7000534107 /* cmind-test.app */,
+				03ECBAE71C29C7C600F4BF78 /* cmind-testTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -68,6 +92,15 @@
 				038F40141C26FF7000534107 /* Info.plist */,
 			);
 			path = "cmind-test";
+			sourceTree = "<group>";
+		};
+		03ECBAE81C29C7C600F4BF78 /* cmind-testTests */ = {
+			isa = PBXGroup;
+			children = (
+				03ECBAE91C29C7C600F4BF78 /* cmind_testTests.swift */,
+				03ECBAEB1C29C7C600F4BF78 /* Info.plist */,
+			);
+			path = "cmind-testTests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -90,6 +123,24 @@
 			productReference = 038F40051C26FF7000534107 /* cmind-test.app */;
 			productType = "com.apple.product-type.application";
 		};
+		03ECBAE61C29C7C600F4BF78 /* cmind-testTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03ECBAF01C29C7C600F4BF78 /* Build configuration list for PBXNativeTarget "cmind-testTests" */;
+			buildPhases = (
+				03ECBAE31C29C7C600F4BF78 /* Sources */,
+				03ECBAE41C29C7C600F4BF78 /* Frameworks */,
+				03ECBAE51C29C7C600F4BF78 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				03ECBAED1C29C7C600F4BF78 /* PBXTargetDependency */,
+			);
+			name = "cmind-testTests";
+			productName = "cmind-testTests";
+			productReference = 03ECBAE71C29C7C600F4BF78 /* cmind-testTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -102,6 +153,10 @@
 				TargetAttributes = {
 					038F40041C26FF7000534107 = {
 						CreatedOnToolsVersion = 7.2;
+					};
+					03ECBAE61C29C7C600F4BF78 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 038F40041C26FF7000534107;
 					};
 				};
 			};
@@ -119,6 +174,7 @@
 			projectRoot = "";
 			targets = (
 				038F40041C26FF7000534107 /* cmind-test */,
+				03ECBAE61C29C7C600F4BF78 /* cmind-testTests */,
 			);
 		};
 /* End PBXProject section */
@@ -131,6 +187,13 @@
 				038F40131C26FF7000534107 /* LaunchScreen.storyboard in Resources */,
 				038F40101C26FF7000534107 /* Assets.xcassets in Resources */,
 				038F400E1C26FF7000534107 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03ECBAE51C29C7C600F4BF78 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,7 +211,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		03ECBAE31C29C7C600F4BF78 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03ECBAEA1C29C7C600F4BF78 /* cmind_testTests.swift in Sources */,
+				03ECBAF11C29C7F000F4BF78 /* GroupingFormatter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		03ECBAED1C29C7C600F4BF78 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 038F40041C26FF7000534107 /* cmind-test */;
+			targetProxy = 03ECBAEC1C29C7C600F4BF78 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		038F400C1C26FF7000534107 /* Main.storyboard */ = {
@@ -273,6 +353,30 @@
 			};
 			name = Release;
 		};
+		03ECBAEE1C29C7C600F4BF78 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "cmind-testTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.m4rr.cmind-testTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cmind-test.app/cmind-test";
+			};
+			name = Debug;
+		};
+		03ECBAEF1C29C7C600F4BF78 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "cmind-testTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.m4rr.cmind-testTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cmind-test.app/cmind-test";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -293,6 +397,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		03ECBAF01C29C7C600F4BF78 /* Build configuration list for PBXNativeTarget "cmind-testTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03ECBAEE1C29C7C600F4BF78 /* Debug */,
+				03ECBAEF1C29C7C600F4BF78 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

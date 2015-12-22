@@ -46,6 +46,45 @@ class GroupingFormatter {
     return completeSentence.stringByTrimmingCharactersInSet(NSCharacterSet(charactersInString: " ,"))
   }
 
+  func gg(number: Double) -> String {
+    return writeOut(grouping2(number))
+  }
+
+  func grouping2(number: Double) -> [[Int]] {
+    var sms: [[Int]] = []
+    var accum: [Int] = []
+
+    splitNumber(number).forEach { (digit: Int) in
+      if accum.last != digit && !accum.isEmpty {
+        sms.append(accum)
+        accum = []
+      }
+      accum.append(digit)
+    }
+    sms.append(accum)
+    
+    return sms
+  }
+
+  private func wordForNumber(count: Int) -> String {
+    return nf.stringFromNumber(count) ?? ""
+  }
+
+  private func writeOut(grouped: [[Int]]) -> String {
+    let noBrakeSpace = " "
+
+    let completeSentence = grouped.reduce("") {
+      if let digit = $1.first {
+        let suffix: String = $1.count > 1 ? "s" : ""
+        return $0 + " \(wordForNumber($1.count))\(noBrakeSpace)\(digit)\(suffix),"
+      }
+      return $0
+    }
+
+    let t =  completeSentence.stringByTrimmingCharactersInSet(NSCharacterSet(charactersInString: " ,"))
+    return t
+  }
+
   private let nf: NSNumberFormatter = {
     let nf = NSNumberFormatter()
     nf.numberStyle = NSNumberFormatterStyle.SpellOutStyle
