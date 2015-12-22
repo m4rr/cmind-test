@@ -13,7 +13,7 @@
 		038F40101C26FF7000534107 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 038F400F1C26FF7000534107 /* Assets.xcassets */; };
 		038F40131C26FF7000534107 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 038F40111C26FF7000534107 /* LaunchScreen.storyboard */; };
 		03C5B7A21C285C9B0036497C /* Page2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C5B7A11C285C9B0036497C /* Page2ViewController.swift */; };
-		03ECBAE01C29604D00F4BF78 /* GroupedNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03ECBADF1C29604D00F4BF78 /* GroupedNumbers.swift */; };
+		03ECBAE01C29604D00F4BF78 /* GroupingFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03ECBADF1C29604D00F4BF78 /* GroupingFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,7 @@
 		038F40121C26FF7000534107 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		038F40141C26FF7000534107 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03C5B7A11C285C9B0036497C /* Page2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page2ViewController.swift; sourceTree = "<group>"; };
-		03ECBADF1C29604D00F4BF78 /* GroupedNumbers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupedNumbers.swift; sourceTree = "<group>"; };
+		03ECBADF1C29604D00F4BF78 /* GroupingFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupingFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +61,7 @@
 				038F40081C26FF7000534107 /* AppDelegate.swift */,
 				038F400A1C26FF7000534107 /* Page1ViewController.swift */,
 				03C5B7A11C285C9B0036497C /* Page2ViewController.swift */,
-				03ECBADF1C29604D00F4BF78 /* GroupedNumbers.swift */,
+				03ECBADF1C29604D00F4BF78 /* GroupingFormatter.swift */,
 				038F400C1C26FF7000534107 /* Main.storyboard */,
 				038F400F1C26FF7000534107 /* Assets.xcassets */,
 				038F40111C26FF7000534107 /* LaunchScreen.storyboard */,
@@ -142,7 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				038F400B1C26FF7000534107 /* Page1ViewController.swift in Sources */,
-				03ECBAE01C29604D00F4BF78 /* GroupedNumbers.swift in Sources */,
+				03ECBAE01C29604D00F4BF78 /* GroupingFormatter.swift in Sources */,
 				03C5B7A21C285C9B0036497C /* Page2ViewController.swift in Sources */,
 				038F40091C26FF7000534107 /* AppDelegate.swift in Sources */,
 			);
