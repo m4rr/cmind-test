@@ -12,40 +12,41 @@ private let basicCellId = "basicCell"
 
 class Page2ViewController: UIViewController {
 
+  @IBOutlet weak var tableView: UITableView!
+
+  private let groupingFormatter = GroupingFormatter()
+
+  private lazy var data: [String] = {
+    return self.fillDataSource()
+  }()
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    // Do any additional setup after loading the view.
+    tableView.rowHeight = UITableViewAutomaticDimension
+    tableView.estimatedRowHeight = 100
   }
 
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
+  private func fillDataSource() -> [String] {
+    return (0...100).map { _ in
+      return self.groupingFormatter.grouping(
+        self.groupingFormatter.random(0, 99999_99999_99999_99999)
+      )
+    }
   }
-
-
-  /*
-  // MARK: - Navigation
-
-  // In a storyboard-based application, you will often want to do a little preparation before navigation
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-  // Get the new view controller using segue.destinationViewController.
-  // Pass the selected object to the new view controller.
-  }
-  */
 
 }
 
 extension Page2ViewController: UITableViewDataSource {
 
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 100
+    return data.count
   }
 
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell: UITableViewCell! = tableView.dequeueReusableCellWithIdentifier(basicCellId)
 
-    cell.textLabel?.text = "\(indexPath.row)"
+    cell.textLabel?.text = data[indexPath.row]
 
     return cell
   }
