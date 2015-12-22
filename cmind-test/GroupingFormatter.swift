@@ -15,42 +15,10 @@ class GroupingFormatter {
   }
 
   func grouping(number: Double) -> String {
-    var sames: [Int] = []
-    var completeSentence = ""
-
-    func updateCompleteSentence() {
-      guard let
-        digit = sames.first,
-        wordForNumber = nf.stringFromNumber(sames.count)
-        else { return; }
-
-      let noBrakeSpace = " "
-      let suffix: String = sames.count > 1 ? "s" : ""
-
-      completeSentence += " \(wordForNumber)\(noBrakeSpace)\(digit)\(suffix),"
-    }
-
-    splitNumber(number).forEach { digit in
-      if sames.isEmpty || sames.last == digit {
-        sames.append(digit)
-        return;
-      }
-
-      updateCompleteSentence()
-
-      sames = [digit]
-    }
-
-    updateCompleteSentence()
-
-    return completeSentence.stringByTrimmingCharactersInSet(NSCharacterSet(charactersInString: " ,"))
-  }
-
-  func gg(number: Double) -> String {
     return writeOut(consecutiveGrouping(number))
   }
 
-  func consecutiveGrouping(number: Double) -> [[Int]] {
+  private func consecutiveGrouping(number: Double) -> [[Int]] {
     var sameValues: [[Int]] = []
     var accumulator: [Int] = []
 

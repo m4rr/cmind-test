@@ -10,7 +10,7 @@ import XCTest
 
 class cmind_testTests: XCTestCase {
 
-  let gf = GroupingFormatter()
+  let groupingFormatter = GroupingFormatter()
 
   override func setUp() {
     super.setUp()
@@ -30,7 +30,8 @@ class cmind_testTests: XCTestCase {
     ]
 
     for (key, value) in test {
-      let result = gf.gg(value)
+      let result = groupingFormatter.grouping(value)
+      
       XCTAssert(key == result, "writeOut() doesn't work")
     }
   }
