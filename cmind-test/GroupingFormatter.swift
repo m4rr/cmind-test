@@ -19,7 +19,10 @@ class GroupingFormatter {
     var completeSentence = ""
 
     func updateCompleteSentence() {
-      guard let digit = sames.first, wordForNumber = nf.stringFromNumber(sames.count) else { return }
+      guard let
+        digit = sames.first,
+        wordForNumber = nf.stringFromNumber(sames.count)
+        else { return; }
 
       let noBrakeSpace = " "
       let suffix: String = sames.count > 1 ? "s" : ""
@@ -30,7 +33,7 @@ class GroupingFormatter {
     splitNumber(number).forEach { digit in
       if sames.isEmpty || sames.last == digit {
         sames.append(digit)
-        return
+        return;
       }
 
       updateCompleteSentence()
@@ -50,9 +53,9 @@ class GroupingFormatter {
   }()
 
   private var splitNumber: (Double) -> [Int] = { number in
-    var s = String(format: "%f.0", arguments: [round(number)])
-    s = s.stringByTrimmingCharactersInSet(NSCharacterSet(charactersInString: ".0"))
-    return s.characters.map { ch in
+    var stringNumber = String(format: "%f.0", arguments: [round(number)])
+    stringNumber = stringNumber.stringByTrimmingCharactersInSet(NSCharacterSet(charactersInString: ".0"))
+    return stringNumber.characters.map { ch in
       return Int(String(ch))!
     }
   }
