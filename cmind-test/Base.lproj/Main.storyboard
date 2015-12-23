@@ -3,6 +3,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Page1 View Controller-->
@@ -147,12 +150,43 @@
                     <view key="view" contentMode="scaleToFill" id="8hR-rA-3zB">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8FH-A3-Egy">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="train" translatesAutoresizingMaskIntoConstraints="NO" id="GAw-OQ-QXz">
+                                        <rect key="frame" x="200" y="200" width="200" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="GAw-OQ-QXz" secondAttribute="height" multiplier="1:1" id="QxS-pZ-65O"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="GAw-OQ-QXz" firstAttribute="centerX" secondItem="8FH-A3-Egy" secondAttribute="centerX" id="4UV-jy-11z"/>
+                                    <constraint firstItem="GAw-OQ-QXz" firstAttribute="centerY" secondItem="8FH-A3-Egy" secondAttribute="centerY" id="GnT-lY-oYW"/>
+                                    <constraint firstItem="GAw-OQ-QXz" firstAttribute="width" secondItem="8FH-A3-Egy" secondAttribute="width" multiplier="1:2" id="R3V-IX-b3t"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8FH-A3-Egy" firstAttribute="leading" secondItem="8hR-rA-3zB" secondAttribute="leading" id="Ikr-Ki-qJ8"/>
+                            <constraint firstItem="8FH-A3-Egy" firstAttribute="top" secondItem="8hR-rA-3zB" secondAttribute="topMargin" id="KsP-IR-aT5"/>
+                            <constraint firstAttribute="trailing" secondItem="8FH-A3-Egy" secondAttribute="trailing" id="Ygj-rw-kZV"/>
+                            <constraint firstItem="BMi-R9-2uY" firstAttribute="top" secondItem="8FH-A3-Egy" secondAttribute="bottom" id="pLk-IU-2dN"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="splashView" destination="8FH-A3-Egy" id="ufX-fE-J5m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RN3-d8-fJD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-988" y="370"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="train" width="400" height="262"/>
+    </resources>
 </document>

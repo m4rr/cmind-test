@@ -11,6 +11,8 @@ import PureLayout
 
 class ParentViewController: UIViewController {
 
+  @IBOutlet weak var splashView: UIView!
+
   enum PageType: String {
     case Page1 = "Page1ViewController"
     case Page2 = "Page2ViewController"
@@ -26,6 +28,8 @@ class ParentViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    hideView(splashView, afterTimeInterval: 3)
+
     setupPageNavigation()
   }
 
@@ -33,6 +37,23 @@ class ParentViewController: UIViewController {
     pageViewController?.view.autoPinEdgesToSuperviewEdges()
     
     super.updateViewConstraints()
+  }
+
+  private func hideView(hidingView: UIView, afterTimeInterval delayInSeconds: NSTimeInterval) {
+    let queue = dispatch_get_main_queue()
+    let floatNsec = Double(NSEC_PER_SEC)
+    let delay = Int64(delayInSeconds * floatNsec)
+    let popTime = dispatch_time(DISPATCH_TIME_NOW, delay);
+
+    dispatch_after(popTime, queue) { () -> Void in
+      UIView.animateWithDuration(0.3, delay: 0, options: .CurveEaseIn,
+        animations: {
+          hidingView.alpha = 0
+        }, completion: { _ in
+          hidingView.hidden = true
+        }
+      )
+    }
   }
 
   private func setupPageNavigation() {
@@ -53,7 +74,7 @@ class ParentViewController: UIViewController {
     pageViewController.setViewControllers([page1VC], direction: .Forward, animated: false, completion: nil)
 
     addChildViewController(pageViewController)
-    view.addSubview(pageViewController.view)
+    view.insertSubview(pageViewController.view, atIndex: 0)
     pageViewController.didMoveToParentViewController(self)
   }
 
