@@ -91,6 +91,7 @@ extension ParentViewController: UIPageViewControllerDataSource {
     vc?.moveOpposite = {
       pageViewController.setViewControllers([viewController], direction: .Forward, animated: true, completion: nil)
     }
+
     return vc
   }
 
@@ -99,6 +100,7 @@ extension ParentViewController: UIPageViewControllerDataSource {
     vc?.moveOpposite = {
       pageViewController.setViewControllers([viewController], direction: .Reverse, animated: true, completion: nil)
     }
+
     return vc
   }
 
