@@ -58,6 +58,7 @@ class GroupingFormatter {
     return nf
   }()
 
+  /// Splitting also 20-digit-length numbers.
   private var splitNumber: (Double) -> [Int] = { number in
     var stringNumber = String(format: "%f.0", arguments: [round(number)])
     stringNumber = stringNumber.stringByTrimmingCharactersInSet(NSCharacterSet(charactersInString: ".0"))
