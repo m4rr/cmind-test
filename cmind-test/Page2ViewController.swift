@@ -30,7 +30,7 @@ class Page2ViewController: MovableViewController {
   private func fillDataSource() -> [String] {
     return (0...100).map { _ in
       return self.groupingFormatter.grouping(
-        self.groupingFormatter.random(0, 99999_99999_99999_99999)
+        self.groupingFormatter.random(0, UInt64.max)
       )
     }
   }

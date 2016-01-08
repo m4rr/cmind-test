@@ -10,15 +10,19 @@ import Foundation
 
 class GroupingFormatter {
 
-  func random(lower: Double = 0, _ upper: Double = 100) -> Double {
-    return (Double(arc4random()) / 0xFFFFFFFF) * (upper - lower) + lower
+  func random(lower: UInt64 = 0, _ upper: UInt64 = 100) -> UInt64 {
+    var rnd: UInt64 = 0
+    arc4random_buf(&rnd, sizeofValue(rnd))
+
+    return rnd % upper
   }
 
-  func grouping(number: Double) -> String {
+
+  func grouping(number: UInt64) -> String {
     return writeOut(consecutiveGrouping(number))
   }
 
-  private func consecutiveGrouping(number: Double) -> [[Int]] {
+  private func consecutiveGrouping(number: UInt64) -> [[Int]] {
     var sameValues: [[Int]] = []
     var accumulator: [Int] = []
 
@@ -59,12 +63,8 @@ class GroupingFormatter {
   }()
 
   /// Splitting also 20-digit-length numbers.
-  private var splitNumber: (Double) -> [Int] = { number in
-    var stringNumber = String(format: "%f.0", arguments: [round(number)])
-    stringNumber = stringNumber.stringByTrimmingCharactersInSet(NSCharacterSet(charactersInString: ".0"))
-    return stringNumber.characters.map { ch in
-      return Int(String(ch))!
-    }
+  private var splitNumber: (UInt64) -> [Int] = { number in
+    return "\(number)".characters.map { Int(String($0))! }
   }
 
 }
